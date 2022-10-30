@@ -1,23 +1,45 @@
-$navbar-link-color: #1C1C1E;
 .wrapper {
-  padding-top: 25px;
   width: 300px;
-  box-sizing: border-box;
-  padding-left:32px;
-  border-right: 1px #020060 solid;
+  padding: 32px 25px;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
+
   strong {
     margin-bottom: 15px;
   }
+
   div {
-    margin: 10px 0;
+    margin: 40px 0;
     display: flex;
     align-items: center;
     img {
       margin-right: 16px;
     }
+
     a {
+      font-weight: bold;
       text-decoration: none;
-      color: $navbar-link-color;
+      color: black;
+    }
+  }
+
+  .settingsOpen {
+    margin: 40px 0 0 47px;
+  }
+
+  .dynamicMenuItem {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    span {
+      display: flex;
+      align-items: center;
     }
   }
 }
+
+
+
+
+
+
+

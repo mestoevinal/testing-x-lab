@@ -1,8 +1,8 @@
-
 .wrapper {
   margin: 32px;
-  width: 100%;
+}
 
+.wrapperSearchInput {
   div {
     margin-bottom: 16px;
   }
@@ -11,21 +11,15 @@
 .title {
   font-size: 26px;
   font-weight: 700;
-  color: #1C1C1E;
 }
 
-.instruction {
-  font-size: 20px;
-  color:#1C1C1E;
-}
+.searchContainer {
+  display: flex;
+  flex-direction: row;
 
-.container {
-  :first-child {
-    margin-right: 24px;
-  }
-
-  .input {
+  input {
     padding: 24px;
+    margin-right: 24px;
     box-sizing: border-box;
     width: 74.3%;
     border-radius: 10px;
@@ -35,16 +29,50 @@
     font-family: 'Montserrat', sans-serif;
   }
 
-  .button {
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 19%;
     height: 70px;
+    overflow: hidden;
+    cursor: pointer;
     border-radius: 10px;
     background-color: #4F27BF;
     color: white;
-    font-size: 20px;
-    outline: none;
     border: none;
-
+    font-size: 26px;
+    img {
+      margin-right: 16px;
+      @media (max-width: 830px) {
+        display: none;
+      }
+    }
   }
 }
+
+.searchListContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 95.5%;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  margin: 32px 0;
+}
+
+.listWrapper {
+  margin: 24px;
+  strong {
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+  div {
+    display: flex;
+    font-weight: 500;
+    border-top: 1px solid white;
+    padding: 16px 0;
+  }
+}
+
 
