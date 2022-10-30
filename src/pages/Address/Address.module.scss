@@ -1,0 +1,50 @@
+
+.wrapper {
+  margin: 32px;
+  width: 100%;
+
+  div {
+    margin-bottom: 16px;
+  }
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1C1C1E;
+}
+
+.instruction {
+  font-size: 20px;
+  color:#1C1C1E;
+}
+
+.container {
+  :first-child {
+    margin-right: 24px;
+  }
+
+  .input {
+    padding: 24px;
+    box-sizing: border-box;
+    width: 74.3%;
+    border-radius: 10px;
+    border: 3px #4F27BF solid;
+    height: 70px;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .button {
+    width: 19%;
+    height: 70px;
+    border-radius: 10px;
+    background-color: #4F27BF;
+    color: white;
+    font-size: 20px;
+    outline: none;
+    border: none;
+
+  }
+}
+

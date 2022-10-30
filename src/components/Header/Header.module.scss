@@ -1,0 +1,40 @@
+$maincolor: #4F27BF;
+$header-text-color: #FFFFFF;
+
+.headerWrapper {
+  display: flex;
+  flex-direction: row;
+  background-color: $maincolor;
+}
+
+.headerContainer {
+  width: 100%;
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 32px;
+  div {
+    font-weight: 700;
+    color: $header-text-color;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    :first-child{
+      margin-left: 0;
+      margin-right: 24px;
+    }
+    :last-child{
+      margin-right: 0px;
+    }
+    span {
+      white-space: nowrap;
+    }
+  }
+
+
+}
+
