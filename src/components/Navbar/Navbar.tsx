@@ -58,20 +58,25 @@ const Navbar = () => {
                     Виджеты
                 </NavLink>
             </div>
+            {/*Блок с настройками реализовывал и с вложенным вариантом, */}
+            {/*без имитации вложенности, но так получалось больше кода,*/}
+            {/*соответственно читаемость хуже. В итоге не определился что лучше, */}
+            {/*но решил остановиться на варианте с лучшей читаемостью,*/}
+            {/*но с небольшим костылем в виде константных отступов*/}
             <div
                 className={NavbarCss.dynamicMenuItem}
                 onClick={() => setSettings(!settings)}
             >
-                <span>
-                    <img src={settingsIcon} alt="Настройки"/>
-                    <NavLink to={"/"}>
-                        Настройки
-                    </NavLink>
-                </span>
+                    <div>
+                        <img src={settingsIcon} alt="Настройки"/>
+                        <NavLink to={"/"} className={NavbarCss.test}>
+                            Настройки
+                        </NavLink>
+                    </div>
                 {settings ?
-                    <img src={expand} width={15} height={15} alt="развернуть"/>
+                    <img src={expand} width={15} height={15} alt="развернуть настройки"/>
                     :
-                    <img src={collapse} width={15} height={15} alt="свернуть"/>
+                    <img src={collapse} width={15} height={15} alt="свернуть настройки"/>
                 }
             </div>
             {settings &&
@@ -81,11 +86,12 @@ const Navbar = () => {
                 </div>
             }
             {settings &&
-                <div className={NavbarCss.settingsOpen} >
+                <div className={NavbarCss.settingsOpen}>
                     <img src={finance} alt="Управление финансами"/>
                     <NavLink to="/">Управление финансами</NavLink>
                 </div>
             }
+
             <div>
                 <img src={exit} alt="Выход"/>
                 <NavLink to={"/"}>
@@ -93,6 +99,7 @@ const Navbar = () => {
                 </NavLink>
             </div>
         </div>
+
     );
 };
 

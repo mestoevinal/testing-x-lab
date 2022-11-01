@@ -6,6 +6,8 @@ import AppCss from './App.module.scss'
 import Address from "./pages/Address/Address";
 import News from "./pages/News/News";
 import AppRouter from "./AppRouter/AppRouter";
+import cartinka from './components/Navbar/img/Screenshot_4.png'
+
 
 function App() {
 

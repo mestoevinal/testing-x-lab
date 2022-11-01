@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import AddressCss from './Address.module.scss'
 import searchIcon from './img/searchIcon.svg'
 import {fetchAddress} from "../../api/address";
@@ -43,7 +43,7 @@ const Address = () => {
 
             <div className={AddressCss.searchListContainer}>
                 <div className={AddressCss.listWrapper}>
-                    <strong>
+                    <strong style={{marginBottom:"16px"}}>
                         Адреса
                     </strong>
                     {address.map((el: requestAddress) =>

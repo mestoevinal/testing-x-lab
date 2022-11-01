@@ -1,8 +1,5 @@
 .wrapper{
-  width: 100%;
-  margin: 32px;
-  box-sizing: border-box;
-
+  padding: 32px;
 }
 .title {
   font-size: 26px;
@@ -16,8 +13,11 @@
 .text{
   p {
     margin-top: 24px;
+    :first-child{margin-left: 0px}
+    :last-child{margin-right: 0px}
   }
   a {
+    margin: 5px;
     color:#4F27BF;
   }
 }

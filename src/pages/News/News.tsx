@@ -1,26 +1,40 @@
-import React from 'react';
+import React, {JSXElementConstructor} from 'react';
 import NewsCss from './News.module.scss'
 import {NavLink} from "react-router-dom";
 import {text} from "./text";
 
 const News = () => {
-    const res: any = []
+    let modifiedTextArr:Array<any> = text.split(" ")
+    let resultArr:Array<any> = []
     const linkRegular = /((?:https?:\/\/|ftps?:\/\/|\bwww\.)(?:(?![.,?!;:()]*(?:\s|$))[^\s]){2,})|(\n+|(?:(?!(?:https?:\/\/|ftp:\/\/|\bwww\.)(?:(?![.,?!;:()]*(?:\s|$))[^\s]){2,}).)+)/gim
-    const emailRegular = /[^|\w](\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)/gim
+    const emailRegular = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/gim
 
-    text.replace(linkRegular,
-        (m, linkValid, textparam):any => {
-            let emailPush = ""
-            textparam?.replace(emailRegular, (item: string, emailValid: string) => {
-                emailPush = emailValid
-                res.push(<a href={`mailto:${emailValid}`} key={res.length}>{emailValid}</a>)
-            })
-            res.push(
-                    linkValid
-                    ? <a href={(linkValid[0] === "w" ? `//` : "") + linkValid} key={res.length}>{linkValid}</a>
-                    : textparam.split(" ").filter((e:any) => e !== emailPush).join(" ")
-            )
+    for (let i = 0; i < modifiedTextArr.length; i++) {
+        let word = modifiedTextArr[i]
+        word.replace(linkRegular, (verifiableWord: string, link: string) => {
+            if (link) {
+                modifiedTextArr[i] = <a href={(link[0] === "w" ? `//` : "") + link}>{link}</a>
+            }
         })
+        word.replace(emailRegular, (email: string) => modifiedTextArr[i] = <a href={`mailto:${email}`} >{email}</a>)
+    }
+
+    let AddWord = ""
+    for (let i = 0; i <= modifiedTextArr.length; i++) {
+        if(typeof modifiedTextArr[i] === 'object'){
+            resultArr.push(modifiedTextArr[i])
+            if(AddWord !== "") {
+                resultArr.push(AddWord)
+                AddWord = ""
+            }
+        } else if (i === modifiedTextArr.length){
+            resultArr.push(AddWord)
+        }
+        else {
+            AddWord += ` ${modifiedTextArr[i]}`
+        }
+    }
+
 
     return (
         <div className={NewsCss.wrapper}>
@@ -30,7 +44,22 @@ const News = () => {
             </div>
             <div className={NewsCss.text}>
                 <p>
-                    {res}
+                    {resultArr}
+                </p>
+                <p>
+                    {resultArr}
+                </p>
+                <p>
+                    {resultArr}
+                </p>
+                <p>
+                    {resultArr}
+                </p>
+                <p>
+                    {resultArr}
+                </p>
+                <p>
+                    {resultArr}
                 </p>
             </div>
         </div>

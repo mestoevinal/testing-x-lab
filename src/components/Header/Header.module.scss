@@ -1,7 +1,4 @@
 $maincolor: #4F27BF;
-.headerWrapper{
-  height: 80px;
-}
 
 .headerContainer {
   display: flex;
@@ -13,7 +10,6 @@ $maincolor: #4F27BF;
 .headerContentContainer {
   display: flex;
   margin: 0 32px;
-
   div {
     display: flex;
     align-items: center;

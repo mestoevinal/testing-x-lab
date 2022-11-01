@@ -7,17 +7,15 @@ import UserIcon from './img/userIcon.svg'
 const Header = () => {
     let router = useNavigate()
     return (
-        <div className={HeaderCss.headerWrapper}>
-            <div className={HeaderCss.headerContainer}>
-                <div className={HeaderCss.headerContentContainer}>
-                    <div onClick={() => router('/')}>
-                        <img src={SettingsIcon} alt="X-lab"/>
-                        <span>Wrench CRM</span>
-                    </div>
-                    <div onClick={() => router('/')}>
-                        <img src={UserIcon} alt="User Icon"/>
-                        <span>Имя Фамилия</span>
-                    </div>
+        <div className={HeaderCss.headerContainer}>
+            <div className={HeaderCss.headerContentContainer}>
+                <div onClick={() => router('/')}>
+                    <img src={SettingsIcon} alt="X-lab"/>
+                    <span>Wrench CRM</span>
+                </div>
+                <div onClick={() => router('/')}>
+                    <img src={UserIcon} alt="User Icon"/>
+                    <span>Имя Фамилия</span>
                 </div>
             </div>
         </div>

@@ -20,6 +20,7 @@
       text-decoration: none;
       color: black;
     }
+
   }
 
   .settingsOpen {
@@ -30,12 +31,15 @@
     display: flex;
     justify-content: space-between;
     cursor: pointer;
-    span {
+    div {
+      margin: 0;
       display: flex;
       align-items: center;
     }
   }
 }
+
+
 
 
 
